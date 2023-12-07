@@ -5,6 +5,7 @@ import { Row, Col, ListGroup,Card, Image, Form, Button} from 'react-bootstrap'
 import { FaTrash } from 'react-icons/fa';              
 import Message from '../components/Message'
 import { addToCart,removeFromCart } from '../slices/cartSlice';
+import shippingScreen from './ShippingScreen';
 
 const CartScreen = () => {
 
@@ -21,8 +22,10 @@ const CartScreen = () => {
       dispatch(removeFromCart(id));
     }
 
-    const checkoutHandler =()=>{
-      navigate('/login?redirect=/shipping')
+    const checkoutHandler =(e)=>{
+      e.preventDefault();
+      navigate('/shipping');
+      console.log('hi')
     }
 
   return ( 
@@ -78,7 +81,7 @@ const CartScreen = () => {
           </ListGroup.Item>
           <ListGroup.Item>
             <Button type='button' className='btn-block' disabled={cartItems.length ===0}
-            onClick={ checkoutHandler }>
+            onClick={(e)=>{checkoutHandler(e)}  }>
               Proceed To Checkout
             </Button>
           </ListGroup.Item>
