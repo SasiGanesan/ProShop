@@ -6,7 +6,7 @@ import { Form, Button, Col } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { savePaymentMethod } from '../slices/cartSlice';
-import shippingScreen from './ShippingScreen';
+
 
 
 const PaymentScreen = () => {
@@ -35,7 +35,7 @@ const PaymentScreen = () => {
     <FormContainer>
         <CheckoutSteps step1 step2 step3 />
         <h1>Payment Method</h1>
-        <Form>
+        <Form onSubmit={submitHandler}>
             <Form.Group>
                 <Form.Label as='legend'>Select Method</Form.Label>
                 <Col>
