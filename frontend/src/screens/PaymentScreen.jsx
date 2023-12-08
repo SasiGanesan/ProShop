@@ -36,7 +36,7 @@ const PaymentScreen = () => {
         <CheckoutSteps step1 step2 step3 />
         <h1>Payment Method</h1>
         <Form onSubmit={submitHandler}>
-            <Form.Group>
+            <Form.Group  controlId='payment' className='my-2'>
                 <Form.Label as='legend'>Select Method</Form.Label>
                 <Col>
                 <Form.Check type='radio'

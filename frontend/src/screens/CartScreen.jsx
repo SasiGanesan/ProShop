@@ -5,7 +5,7 @@ import { Row, Col, ListGroup,Card, Image, Form, Button} from 'react-bootstrap'
 import { FaTrash } from 'react-icons/fa';              
 import Message from '../components/Message'
 import { addToCart,removeFromCart } from '../slices/cartSlice';
-import shippingScreen from './ShippingScreen';
+//import shippingScreen from './ShippingScreen';
 
 const CartScreen = () => {
 
@@ -22,9 +22,8 @@ const CartScreen = () => {
       dispatch(removeFromCart(id));
     }
 
-    const checkoutHandler =(e)=>{
-      e.preventDefault();
-      navigate('/shipping');
+    const checkoutHandler =()=>{
+      navigate('/login?redirect=/shipping');
       console.log('hi')
     }
 

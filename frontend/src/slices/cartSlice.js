@@ -28,7 +28,8 @@ const cartSlice = createSlice({
             return updateCart(state);
         },
         saveShippingAddress: (state, action) => {
-            state.cartItems = state.cartItems.filter((x) =>x._id !==action.payload);
+            state.shippingAddress = action.payload;
+            //console.log(state)
             return updateCart(state);
         },
         savePaymentMethod:(state, action)=>{
