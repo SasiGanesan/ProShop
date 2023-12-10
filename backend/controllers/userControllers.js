@@ -146,7 +146,7 @@ const getUsersByID = asyncHandler(async(req,res)=>{
 //@desc   Delete users 
 //@route  DELETE /api/users/:id
 //@access Private/admin
-const deleteUsers = asyncHandler(async(req,res)=>{
+const deleteUser = asyncHandler(async(req,res)=>{
     const user=await User.findById(req.params.id);
     if(user){
         if(user.isAdmin){
@@ -164,7 +164,7 @@ const deleteUsers = asyncHandler(async(req,res)=>{
 //@desc   Update user 
 //@route  PUT /api/users/:id
 //@access Private/admin
-const updateUser = asyncHandler(async(req,res)=>{
+const updatedUser = asyncHandler(async(req,res)=>{
    const user=await User.findById(req.params.id);
    if(user){
     user.name=req.body.name || user.name;
@@ -173,10 +173,10 @@ const updateUser = asyncHandler(async(req,res)=>{
 
     const updateUser = await user.save();
     res.status(200).json({
-        _id: updatedUser._id,
-        name: updatedUser.name,
-        email: updatedUser.email,
-        isAdmin: updatedUser.isAdmin,
+        _id: updateUser._id,
+        name: updateUser.name,
+        email: updateUser.email,
+        isAdmin: updateUser.isAdmin,
     })
    }else{
     res.status(404);
@@ -189,5 +189,5 @@ export{
     authUser,
     registerUser,logoutUser,
     getUserProfile,updateUserProfile,
-    getUsers,deleteUsers,getUsersByID,updateUser
+    getUsers,deleteUser,getUsersByID,updatedUser
 };
