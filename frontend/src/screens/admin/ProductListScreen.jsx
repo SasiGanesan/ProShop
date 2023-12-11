@@ -55,6 +55,7 @@ const ProductListScreen = () => {
 
    {loadingCreate && <Loader/>}
    {loadingDelete && <Loader/>}
+
   {isLoading ? <Loader />: error ? <Message variant='danger'>
     {error}
   </Message>: (
@@ -99,4 +100,4 @@ const ProductListScreen = () => {
   
 }
 
-export default ProductListScreen
+export default ProductListScreen;

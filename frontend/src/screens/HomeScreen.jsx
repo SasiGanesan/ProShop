@@ -8,7 +8,7 @@ import Message from '../components/Message';
 import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
 
-import { useGetProductDetailsQuery } from '../slices/productsApiSlice';
+
 
 
 const HomeScreen = () => {
