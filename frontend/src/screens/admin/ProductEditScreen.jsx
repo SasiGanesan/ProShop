@@ -101,6 +101,7 @@ const uploadFileHandler=async(e)=>{
                 onChange={(e)=>setPrice(e.target.value)}>
                 </Form.Control>
             </Form.Group>
+            {loadingUpload && <Loader/>}
            
             <Form.Group controlId='image' className='my-2'>
                 <Form.Label>Image</Form.Label>
