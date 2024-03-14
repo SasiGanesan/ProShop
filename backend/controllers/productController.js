@@ -33,6 +33,20 @@ const getProductById = asyncHandler(async(req, res) => {
 }
 });
 
+// const updateProductById = asyncHandler(async(req, res) => {
+//         const product =await Product.findById(req.params.id)
+//         .updateProductById(
+//             {_id:user},
+//             {
+//         if(product){
+//             return res.json(product);
+//                 }else{
+//                 res.status(404);
+//                 throw new Error ('Resource not found')
+//             }
+//             });
+
+
 //@desc     create a products
 //@route    POST /api/products
 //@access   Private/admin
